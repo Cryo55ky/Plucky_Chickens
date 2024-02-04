@@ -1,0 +1,208 @@
+[gd_scene load_steps=23 format=3 uid="uid://b1nfnw3a7epkl"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_background.gd" id="1_7d0n5"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_m58cd"]
+[ext_resource type="Texture2D" uid="uid://dxc5vgn6ni0he" path="res://Background/Purple.png" id="2_d3k2g"]
+[ext_resource type="FontFile" uid="uid://qkr1dytwkl6o" path="res://Fonts/m6x11.ttf" id="3_8dqed"]
+[ext_resource type="Texture2D" uid="uid://bdk8vnnyc8lum" path="res://UI/Restart.png" id="5_8j78y"]
+[ext_resource type="AudioStream" uid="uid://b81niye2sn6oe" path="res://Audio/Game Over - Not So Super After All, It Seems.mp3" id="6_giqk4"]
+[ext_resource type="Texture2D" uid="uid://cmfc4ylomnhdm" path="res://Characters/Run (32x34)chicken.png" id="7_7mw0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xs7l"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pse"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fdhp"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nnt0"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4lrh"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ounyl"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f0ch"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhso7"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cfxw"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rirrb"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7fwg"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(320, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7oyd"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(352, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udfyv"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(384, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qav0j"]
+atlas = ExtResource("7_7mw0n")
+region = Rect2(416, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxjgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xs7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6pse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fdhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nnt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4lrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ounyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f0ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhso7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cfxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rirrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7fwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7oyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udfyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qav0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="GameOver" type="Node"]
+script = ExtResource("1_m58cd")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_7d0n5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(128, 128)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_d3k2g")
+stretch_mode = 1
+
+[node name="RunningChicken" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(592, 96)
+scale = Vector2(5.5, 5.20588)
+sprite_frames = SubResource("SpriteFrames_wxjgy")
+autoplay = "default"
+frame_progress = 0.565337
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -148.0
+offset_right = 254.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8dqed")
+theme_override_font_sizes/font_size = 125
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenuButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 54.0
+offset_right = 46.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_8j78y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackToMainMenuLabel" type="Label" parent="BackToMainMenuButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 70.5
+offset_right = 154.0
+offset_bottom = 106.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8dqed")
+theme_override_font_sizes/font_size = 40
+text = "BACK TO MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicGameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_giqk4")
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]

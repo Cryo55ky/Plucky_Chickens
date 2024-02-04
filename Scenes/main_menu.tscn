@@ -1,0 +1,234 @@
+[gd_scene load_steps=11 format=3 uid="uid://wdlb2l5nwqxf"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hvuj3"]
+[ext_resource type="Texture2D" uid="uid://bgu3hi8rohy81" path="res://Background/Yellow.png" id="1_y8nop"]
+[ext_resource type="FontFile" uid="uid://qkr1dytwkl6o" path="res://Fonts/m6x11.ttf" id="2_62siw"]
+[ext_resource type="Texture2D" uid="uid://cui2w5xciq40y" path="res://UI/Play.png" id="5_j2ihf"]
+[ext_resource type="Script" path="res://Scripts/main_menu_background.gd" id="5_ubwyw"]
+[ext_resource type="Texture2D" uid="uid://cwopwx7jqfdsg" path="res://UI/Levels.png" id="6_n23iu"]
+[ext_resource type="Texture2D" uid="uid://c4ktoif0xur5n" path="res://UI/Characters.png" id="7_fbfux"]
+[ext_resource type="AudioStream" uid="uid://cqcufumbgjoq7" path="res://Audio/puzzlemenu.ogg" id="8_7p3r5"]
+[ext_resource type="Texture2D" uid="uid://d3wlhg37ryjhw" path="res://UI/Settings.png" id="9_dht8h"]
+[ext_resource type="PackedScene" uid="uid://b8gkt4tdppufo" path="res://Scenes/orange_badge.tscn" id="10_8i0ma"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_hvuj3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("5_ubwyw")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_mirroring = Vector2(0, 128)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("1_y8nop")
+stretch_mode = 1
+
+[node name="GameTitleLabel" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -132.0
+offset_right = 354.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 100
+text = "PLUCKY CHICKENS!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = 36.0
+offset_right = -147.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("5_j2ihf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayLabel" type="Label" parent="PlayButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.5
+offset_top = -21.0
+offset_right = 101.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 35
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelectButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 36.0
+offset_right = 126.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("6_n23iu")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LevelSelectLabel" type="Label" parent="LevelSelectButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -29.5
+offset_right = 155.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 35
+text = "SELECT
+LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterSelectButton" type="Button" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 164.0
+offset_right = 125.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.501961, 0.501961, 0.501961, 0.894118)
+theme_override_colors/icon_hover_color = Color(0.501961, 0.501961, 0.501961, 0.894118)
+disabled = true
+icon = ExtResource("7_fbfux")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="CharacterSelectLabel" type="Label" parent="CharacterSelectButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.5
+offset_top = -29.0
+offset_right = 176.5
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.498039)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 35
+text = "SELECT
+CHARACTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_7p3r5")
+volume_db = 8.0
+autoplay = true
+
+[node name="HowToPlayButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = 164.0
+offset_right = -146.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("9_dht8h")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HowToPlayLabel" type="Label" parent="HowToPlayButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -29.5
+offset_right = 132.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_62siw")
+theme_override_font_sizes/font_size = 35
+text = "HOW TO
+PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrangeBadge" parent="." instance=ExtResource("10_8i0ma")]
+position = Vector2(1008, 96)
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="CharacterSelectButton" to="." method="_on_character_select_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]

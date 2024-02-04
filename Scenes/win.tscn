@@ -1,0 +1,264 @@
+[gd_scene load_steps=22 format=3 uid="uid://dp7cmpftxkkoh"]
+
+[ext_resource type="Script" path="res://Scripts/win_background.gd" id="1_ffx0c"]
+[ext_resource type="Script" path="res://Scripts/win.gd" id="1_yv8l1"]
+[ext_resource type="Texture2D" uid="uid://bgu3hi8rohy81" path="res://Background/Yellow.png" id="2_rb1n2"]
+[ext_resource type="FontFile" uid="uid://qkr1dytwkl6o" path="res://Fonts/m6x11.ttf" id="3_jdl08"]
+[ext_resource type="Texture2D" uid="uid://bdk8vnnyc8lum" path="res://UI/Restart.png" id="4_jc0ky"]
+[ext_resource type="Texture2D" uid="uid://de6mbep3367y4" path="res://Characters/Run (32x32)v.png" id="4_x3cau"]
+[ext_resource type="AudioStream" uid="uid://cjway01wa33am" path="res://Audio/life.wav" id="7_43u5c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1u47"]
+bg_color = Color(0.929412, 1, 0.329412, 0.211765)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5mns"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lphpc"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3aq2"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acjxj"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n5i5"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nt0b"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wilvk"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlvyw"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tna1m"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enbdo"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usp6s"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlsak"]
+atlas = ExtResource("4_x3cau")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wq3rq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5mns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lphpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3aq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acjxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n5i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nt0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wilvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlvyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tna1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enbdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usp6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlsak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Win" type="Node"]
+script = ExtResource("1_yv8l1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_ffx0c")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(128, 128)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_rb1n2")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -84.0
+offset_right = 496.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1u47")
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -152.0
+offset_right = 470.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jdl08")
+theme_override_font_sizes/font_size = 25
+text = "CONGRATULATIONS!
+
+YOU'VE SUCCESSFULLY COMPLETED ALL SIX LEVELS (WITHOUT DYING).
+
+REACHED HERE ON THE FIRST GO OR AFTER A FEW TRIES?
+
+PERHAPS YOU'VE DONE IT ALL WITHOUT LOSING A SINGLE LIFE AND COLLECTED ALL THE ORANGES...
+
+EITHER WAY, IF YOU'VE MADE IT HERE, THEN THIS MEANS YOU'VE MADE IT TO THE END.
+
+WELL DONE! THANK YOU SO MUCH FOR PLAYING! ^w^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = 152.0
+offset_right = 477.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_jdl08")
+text = "RETURN TO THE MAIN MENU FOR A SECRET BADGE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VirtualGuy" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(920, 224)
+scale = Vector2(4.91407, 5.42188)
+sprite_frames = SubResource("SpriteFrames_wq3rq")
+autoplay = "default"
+frame_progress = 0.817195
+
+[node name="YouWinTitle" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -252.0
+offset_right = 207.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jdl08")
+theme_override_font_sizes/font_size = 125
+text = "YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenuButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -308.0
+offset_right = -496.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("4_jc0ky")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="BackToMainMenuButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -16.0
+offset_right = 249.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_jdl08")
+theme_override_font_sizes/font_size = 30
+text = "BACK TO MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicWinFanfare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_43u5c")
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]

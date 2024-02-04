@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://do2eqai8k62b2"]
+
+[ext_resource type="Texture2D" uid="uid://bettex3in028d" path="res://Traps/Idle.png" id="1_f3jwf"]
+[ext_resource type="Script" path="res://Scripts/spike.gd" id="1_onlod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh02r"]
+size = Vector2(88, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpu8n"]
+size = Vector2(64.4375, 15)
+
+[node name="Spike" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_onlod")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5.865, 4.913)
+texture = ExtResource("1_f3jwf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 29.5)
+shape = SubResource("RectangleShape2D_vh02r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 12.5)
+shape = SubResource("RectangleShape2D_gpu8n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

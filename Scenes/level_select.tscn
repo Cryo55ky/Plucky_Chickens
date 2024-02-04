@@ -1,0 +1,223 @@
+[gd_scene load_steps=13 format=3 uid="uid://dursay2mxmt17"]
+
+[ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_7jqox"]
+[ext_resource type="Script" path="res://Scripts/level_select_background.gd" id="1_sy3ti"]
+[ext_resource type="Texture2D" uid="uid://genmfkg4dyj4" path="res://Background/Blue.png" id="2_b627u"]
+[ext_resource type="FontFile" uid="uid://qkr1dytwkl6o" path="res://Fonts/m6x11.ttf" id="3_j14t8"]
+[ext_resource type="Texture2D" uid="uid://b5tphou6yoqv2" path="res://UI/Back.png" id="5_10hh6"]
+[ext_resource type="Texture2D" uid="uid://dpemkgo3f838e" path="res://UI/01.png" id="5_t2c7w"]
+[ext_resource type="Texture2D" uid="uid://roskv4nc1pxt" path="res://UI/02.png" id="6_u8hci"]
+[ext_resource type="Texture2D" uid="uid://c7huy2o5ali7j" path="res://UI/03.png" id="8_57is2"]
+[ext_resource type="AudioStream" uid="uid://cqcufumbgjoq7" path="res://Audio/puzzlemenu.ogg" id="9_n4fx7"]
+[ext_resource type="Texture2D" uid="uid://dprjkc6j3cip0" path="res://UI/04.png" id="9_oxgo8"]
+[ext_resource type="Texture2D" uid="uid://b3bov68yehabi" path="res://UI/05.png" id="10_msk1y"]
+[ext_resource type="Texture2D" uid="uid://cnfithxp8ed0e" path="res://UI/06.png" id="11_deui8"]
+
+[node name="LevelSelect" type="Node"]
+script = ExtResource("1_7jqox")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_sy3ti")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(128, 128)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_b627u")
+stretch_mode = 1
+
+[node name="SelectLevelTitleLabel" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -257.0
+offset_right = 166.0
+offset_bottom = -194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_j14t8")
+theme_override_font_sizes/font_size = 70
+text = "Select Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.0
+offset_top = -291.0
+offset_right = -481.0
+offset_bottom = -223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_10hh6")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackLabel" type="Label" parent="BackButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.5
+offset_top = -12.0
+offset_right = 94.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_j14t8")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level1Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -124.0
+offset_right = -148.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_t2c7w")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level2Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -124.0
+offset_right = 52.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("6_u8hci")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level3Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = -124.0
+offset_right = 252.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("8_57is2")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level4Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 76.0
+offset_right = -148.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("9_oxgo8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level5Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 76.0
+offset_right = 52.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("10_msk1y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level6Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 76.0
+offset_right = 252.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.894118)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+icon = ExtResource("11_deui8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_n4fx7")
+volume_db = 2.0
+autoplay = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="Level4Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="Level5Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="Level6Button" to="." method="_on_level_6_button_pressed"]

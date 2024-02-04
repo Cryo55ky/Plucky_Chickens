@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://bce3sk7cvraat"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_to35k"]
+[ext_resource type="FontFile" uid="uid://qkr1dytwkl6o" path="res://Fonts/m6x11.ttf" id="2_ourwn"]
+[ext_resource type="Texture2D" uid="uid://b3o3ue03r6aui" path="res://Items/Orange.png" id="3_dseve"]
+[ext_resource type="Texture2D" uid="uid://b23m4u1uddr0m" path="res://UI/hud_heartFull.png" id="3_jghse"]
+[ext_resource type="Texture2D" uid="uid://mol1irj77hc0" path="res://UI/hud_heartEmpty.png" id="4_b26j3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4alkt"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_to35k")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.517647)
+light_mask = 0
+texture_filter = 1
+offset_left = 22.0
+offset_top = 25.0
+offset_right = 379.0
+offset_bottom = 123.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4alkt")
+
+[node name="PointsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 103.0
+offset_top = 25.0
+offset_right = 163.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.960784, 0.858824, 0, 1)
+theme_override_fonts/font = ExtResource("2_ourwn")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="OrangeIcon" type="Sprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(46, 49)
+scale = Vector2(3.456, 3.456)
+texture = ExtResource("3_dseve")
+hframes = 16
+
+[node name="XLabel" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 81.0
+offset_top = 36.0
+offset_right = 99.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.960784, 0.858824, 0, 1)
+theme_override_fonts/font = ExtResource("2_ourwn")
+theme_override_font_sizes/font_size = 20
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HeartsFull" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 204.0
+offset_top = 53.0
+offset_right = 362.0
+offset_bottom = 98.0
+texture = ExtResource("3_jghse")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="HeartsEmpty" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 204.0
+offset_top = 53.0
+offset_right = 363.0
+offset_bottom = 98.0
+texture = ExtResource("4_b26j3")
+expand_mode = 1
+stretch_mode = 1

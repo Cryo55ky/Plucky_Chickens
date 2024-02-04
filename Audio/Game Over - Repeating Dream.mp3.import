@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjjwemhxasfjc"
+path="res://.godot/imported/Game Over - Repeating Dream.mp3-51d29a75f3e21886a94e0aa5c8a82330.mp3str"
+
+[deps]
+
+source_file="res://Audio/Game Over - Repeating Dream.mp3"
+dest_files=["res://.godot/imported/Game Over - Repeating Dream.mp3-51d29a75f3e21886a94e0aa5c8a82330.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
